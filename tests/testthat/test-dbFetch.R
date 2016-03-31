@@ -133,13 +133,13 @@ test_that('dbFetch works with mock', {
       result <- dbSendQuery(conn, 'SELECT 2')
       expect_error(
         dbFetch(result), 
-        '^Error in check\\.status\\.code\\(get.response\\)'
+        '.*Broken URL.*'
       )
 
       result <- dbSendQuery(conn, 'SELECT 3')
       expect_error(
         dbFetch(result), 
-        '^Error in stop.with.error.message\\(content\\)'
+        '.*Query .*localhost.8000.query.3.1 failed.*'
       )
 
       result <- dbSendQuery(conn, 'SELECT 4 LIMIT 0')
