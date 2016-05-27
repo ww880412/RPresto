@@ -45,7 +45,7 @@ NULL
 #'  data types supported
 #' @keywords internal
 .json.tabular.to.data.frame <- function(data, column.types, timezone) {
-  print(data)
+  #print(data)
   rv <- NULL
   if (data.class(data) != 'list') {
     stop('Unexpected data class: ', data.class(data))
@@ -63,7 +63,7 @@ NULL
   }
 
   rv <- as.list(rep(NA, column.count))
-  print(column.types)
+  #print(column.types)
   column.types[is.na(column.types)] <- 'character'
   for (j in seq_along(column.types)) {
     type <- column.types[j]
