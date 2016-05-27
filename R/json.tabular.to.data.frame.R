@@ -64,6 +64,7 @@ NULL
 
   rv <- as.list(rep(NA, column.count))
   print(column.types)
+  column.types[is.na(column.types)] <- 'character'
   for (j in seq_along(column.types)) {
     type <- column.types[j]
     rv[[j]] <- switch(type,
