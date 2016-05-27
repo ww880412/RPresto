@@ -45,6 +45,7 @@ NULL
 #'  data types supported
 #' @keywords internal
 .json.tabular.to.data.frame <- function(data, column.types, timezone) {
+  print(data)
   rv <- NULL
   if (data.class(data) != 'list') {
     stop('Unexpected data class: ', data.class(data))
